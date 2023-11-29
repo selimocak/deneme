@@ -29,10 +29,40 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 /*=============== SHADOW HEADER ===============*/
-
+const shadowHeader = () => {
+    const header =  document.getElementById('header')
+    this.scrollY >= 50 ? header.classList.add('shadow-header') 
+                       : header.classList.remove('shadow-header')
+}
+window.addEventListener('scroll', shadowHeader)
 
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+contactMessage = document.getElementById('contact-message')
 
+const sendEmail = (e) => {
+    e.preventDefault()
+
+    // seriveID - templateID - #form - publicKey
+    emailjs.sendForm('service_dsayl7k', 'template_6kbfhgk', '#contact-form', 'sW1yS0lZz78OjkuXL')
+    .then(() => {
+        // Show sent message
+        contactMessage.textContent = 'Message sent successfully ✅'
+
+        // Remove message after five seconds
+        setTimeout(() => {
+            contactMessage.textContent = ''
+        }, 5000)
+
+        //Clear input fields
+        contactForm.reset()
+    }, () => {
+        // Show error message
+        contactMessage.textContent = 'Something went wrong ❌'
+    })
+}
+
+contactForm.addEventListener('submit', sendEmail)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
