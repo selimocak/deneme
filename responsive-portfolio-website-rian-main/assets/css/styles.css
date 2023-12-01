@@ -278,6 +278,7 @@ body.dark-theme {
 .nav__toggle {
   font-size: 1.25rem;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 /* Navigation for mobile devices */
@@ -343,6 +344,7 @@ body.dark-theme {
   font-size: var(--h3-font-size);
   font-weight: var(--font-semi-bold);
   transition: color .3s;
+  border-radius: 2px; 
 }
 
 .nav__link::after {
@@ -457,19 +459,25 @@ body.dark-theme {
   left: -3rem;
   top: 0;
   bottom: 0;
+  /* display: grid; */
   margin: auto 0;
-  display: grid;
   row-gap: 1rem;
+}
+
+.codepen {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .home__social-link {
   background-color: var(--black-color-light);
   color: var(--white-color);
   font-size: 1.25rem;
+  border-radius: 4px;
   padding: 6px;
   display: grid;
   place-items: center;
-  transition: background-color .3s;
+  transition: background-color .3s; 
 }
 
 .home__social-link:hover {
@@ -507,6 +515,7 @@ body.dark-theme {
   color: var(--white-color);
   width: 36px;
   height: 36px;
+  border-radius: 2px;
   display: grid;
   place-items: center;
   font-size: 1rem;
@@ -550,6 +559,7 @@ body.dark-theme {
   color: var(--white-color);
   font-weight: var(--font-medium);
   transition: background-color .4s;
+  border-radius: 3px;
 }
 
 .button i {
@@ -565,6 +575,7 @@ body.dark-theme {
   color: var(--black-color);
   padding: .5rem;
   transition: border .4s, color .4s;
+  border-radius: 3px;
 }
 
 .button__ghost i {
@@ -759,6 +770,7 @@ body.dark-theme {
   right: 1rem;
   bottom: -1.5rem;
   padding: 1rem;
+  border-radius: 2px;
 }
 
 .projects__content {
@@ -1013,6 +1025,7 @@ body.dark-theme {
   color: var(--white-color);
   font-size: 1.25rem;
   display: grid;
+  border-radius: 3px;
   place-items: center;
   transition: background-color .3s;
 }
@@ -1131,6 +1144,8 @@ body.dark-theme {
   .contact__data .section__title-2 {
     transform: translateX(0);
   }
+
+
 }
 
 /* For medium devices */
@@ -1592,23 +1607,31 @@ body.dark-theme {
     right: 3rem;
   }
 }
+/* iPhone için özel media query */
+@media only screen and (max-width: 375px) {
+  /* Buraya iPhone cihazlarının özel stilleri eklenecek */
 
+  .container {
+    margin-inline: 1rem;
+  }
 
+  .home__image,
+  .about__image {
+    width: 180px;
+  }
 
+  .about__shadow {
+    height: 330px;
+    right: -2.5rem;
+  }
 
+  .contact__data {
+    width: 100%;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .contact__data .section__title-2 {
+    transform: translateX(0);
+  }
+}
 
 
